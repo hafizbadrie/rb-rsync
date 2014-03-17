@@ -1,0 +1,5 @@
+root: /root/folder/at/local
+target_root: /root/folder/at/target/host
+target_user: userhost
+target_hosts: [host-1.com, host-2.com]
+files: [/local/file/path.txt, /local/file/path.rb]
