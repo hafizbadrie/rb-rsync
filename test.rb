@@ -34,34 +34,6 @@ class TestSyncer < Test::Unit::TestCase
 		assert_not_nil(config['target_hosts'])
 	end
 
-	def test_sync_file_should_return_success_in_local_sync
-		config = {
-			"root"=>"/Applications/XAMPP/htdocs/yii/Yii-apps/JakpostTrvel",
-			"target_root"=>"/Applications/XAMPP/htdocs/yii/Yii-apps/JakpostTrvel",
-			"target_user"=>"",
-			"target_hosts"=>[],
-			"files"=>["/protected/controllers/RssController.php"]
-		}
-
-		file = config['root'] + config['files'][0]
-		target_file = config['target_root'] + config['files'][0]
-		result = Syncer.sync_file file, config['target_user'], config['target_hosts'][0], target_file
-		assert_equal(true, result.success?)
-	end
-
-	def test_sync_file_should_return_success
-		config = {
-			"root"=>"/Applications/XAMPP/htdocs/yii/Yii-apps/JakpostTrvel",
-			"target_root"=>"/storage/htdocs/qabox.jakpost.travel",
-			"target_user"=>"dev",
-			"target_hosts"=>["ws-tr1.oc.jakpost.net", "ws-tr2.oc.jakpost.net"],
-			"files"=>["/protected/controllers/RssController.php"]
-		}
-
-		file = config['root'] + config['files'][0]
-		target_file = config['target_root'] + config['files'][0]
-		result = Syncer.sync_file file, config['target_user'], config['target_hosts'][0], target_file
-		assert_equal(true, result.success?)
-	end
+	
 
 end
